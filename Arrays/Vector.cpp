@@ -22,9 +22,8 @@ int main(){
         cout << grr[i] << " ";
     }
     cout << endl;
-    cout << size(grr) << endl;      // Two methods of finding size
     cout << grr.size() << endl;
 
     grr.pop_back();         // Removes the last element
-    cout << size(grr) << endl;
+    cout << grr.size() << endl;
 }
