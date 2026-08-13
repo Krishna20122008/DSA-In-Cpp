@@ -24,3 +24,5 @@ int main(){
 
     print(arr);
 }
+
+// TC = O(n^2)
