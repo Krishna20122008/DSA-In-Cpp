@@ -15,4 +15,4 @@ public:
         }
         return -1;
     }
-};
+};      //Time complexity = log n  (Very fast)
