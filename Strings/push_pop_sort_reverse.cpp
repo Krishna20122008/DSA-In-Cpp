@@ -1,4 +1,5 @@
 #include<iostream>
+#include<algorithm>
 #include<string>
 using namespace std;
 int main(){
@@ -9,5 +10,11 @@ int main(){
     s.pop_back();
     cout << s << endl;
     s+="Chourasia";
+    cout << s << endl;
+
+    sort(s.begin(), s.end());
+    cout << s << endl;
+
+    reverse(s.begin(), s.end());
     cout << s << endl;
 }
