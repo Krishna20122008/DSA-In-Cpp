@@ -6,6 +6,7 @@ int main(){
     int n;
     cout << "Enter an integer: ";
     cin >> n;
+    // string s = to_string(n);  // Using BuiltIn Fn
     string s = "";
 
     while(n!=0){
