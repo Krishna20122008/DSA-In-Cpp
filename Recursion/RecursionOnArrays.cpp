@@ -1,12 +1,19 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-void printrec(vector<int> &arr, int idx){
+void printArr(vector<int> &arr, int idx){
     if(idx==arr.size()) return;
     cout << arr[idx] << " ";
-    printrec(arr, idx+1);
+    printArr(arr, idx+1);
+}
+void printArrReverse(vector<int> &arr, int idx){
+    if(idx==arr.size()) return;
+    printArrReverse(arr, idx+1);
+    cout << arr[idx] << " ";
 }
 int main(){
     vector<int> arr = {1,52,53,143,6432,1203};
-    printrec(arr,0);
+    printArr(arr,0);
+    cout << endl;
+    printArrReverse(arr,0);
 }
