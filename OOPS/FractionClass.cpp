@@ -57,14 +57,17 @@ fraction simplify(fraction &f1){
 int main(){
     fraction f1(2,5);
     fraction f2(3,5);
+    fraction f3(35,45);
     fraction MultiplyAns = multiply(f1,f2);
     fraction AdditionAns = addition(f1,f2);
     fraction SimplifyAAns = simplify(AdditionAns);
     fraction SimplifyMAns = simplify(MultiplyAns);
+    fraction Simplifyf3 = simplify(f3);
     f1.print();
     f2.print();
     MultiplyAns.print();
     AdditionAns.print();
     SimplifyAAns.print();
     SimplifyMAns.print();
+    Simplifyf3.print();
 }
