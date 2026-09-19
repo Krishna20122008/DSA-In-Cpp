@@ -10,6 +10,9 @@ public:
         this->runs = runs;
         (*this).average = average;
     }
+    void print(){
+        cout << name << endl << runs << endl << average << endl;
+    }
 };
 int main(){
     cricketer c1("Virat Kohli", 14000, 58.1);
@@ -28,4 +31,7 @@ int main(){
     cout << ptr3->name << endl;  // this means -> is a pointer
     // So that means in the parameterized constructor, this-> something is actually a pointer
     // Thus, this->name = name can be rewritten as (*this).name = name
+
+    cricketer* p = new cricketer("abc", 10000, 55.2);       // Pointer usage
+    p->print();
 }
