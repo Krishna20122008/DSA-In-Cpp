@@ -34,6 +34,12 @@ public:
         }
         arr[length++] = x;
     }
+    int get(int x){
+        return arr[x];
+    }
+    void set(int idx, int val){
+        arr[idx] = val;
+    }
     void print(){
         for(int i=0; i<length; i++){
             cout << arr[i] << " ";
@@ -58,4 +64,7 @@ int main(){
     v.push_back(12);
     v.print();
     cout << v.size() << " " << v.capacity() << endl;
+    cout << v.get(3) << endl;
+    v.set(3, 98);
+    cout << v.get(3) << endl;
 }
