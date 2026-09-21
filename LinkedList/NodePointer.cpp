@@ -16,6 +16,16 @@ void print(Node* head){
     }
     cout << endl;
 }
+void printrec(Node* head){      // This is using recursion.
+    if (head==NULL) return;
+    cout << head->val << " ";
+    return printrec(head->next);
+}
+void printrev(Node* head){
+    if (head==NULL) return;
+    printrev(head->next);
+    cout << head->val << " ";
+}
 int main(){
     Node* a = new Node(7);  //Head
     Node* b = new Node(0);
@@ -36,5 +46,8 @@ int main(){
     cout << a->next->next->next->next->val << endl;
 
     print(a);
-    print(b);
+    print(b);           // Printing using loop
+    printrec(a);        // Printing using recursion
+    cout << endl;
+    printrev(a);
 }
