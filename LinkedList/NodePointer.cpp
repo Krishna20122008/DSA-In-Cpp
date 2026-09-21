@@ -8,6 +8,14 @@ public:
         this->val = val;
     }
 };
+void print(Node* head){
+    Node* temp = head;
+    while (temp!=NULL){
+        cout << temp->val << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
 int main(){
     Node* a = new Node(7);  //Head
     Node* b = new Node(0);
@@ -26,4 +34,7 @@ int main(){
     cout << a->next->next->val << endl;
     cout << a->next->next->next->val << endl;
     cout << a->next->next->next->next->val << endl;
+
+    print(a);
+    print(b);
 }
