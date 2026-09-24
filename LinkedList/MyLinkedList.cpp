@@ -87,7 +87,7 @@ public:
         }
         Node* ToBeDeleted = temp->next;
         temp->next = temp->next->next;
-        if(idx==length-1) tail = temp;
+        if(idx==length-1) tail = temp; 
         delete ToBeDeleted;
         length--;
     }
