@@ -47,6 +47,50 @@ public:
         head = head->next;
         length--;
     }
+    void insert(int val, int idx){
+        if(idx==0){
+            insertAtHead(val);
+            return ;
+        }
+        if(idx==length){
+            insertAtTail(val);
+            return;
+        }
+
+        Node* n = new Node(val);
+        Node* temp = head;
+        for(int i=1; i<=idx-1; i++){
+            temp = temp->next;
+        }
+        n->next = temp->next;
+        temp->next = n;
+        length++;
+    }
+    void get(int idx){
+        Node* temp = head;
+        for(int i=0; i<idx; i++){
+            temp = temp->next;
+        }
+        cout << "The value is: " << temp->val << endl;
+    }
+    void remove(int idx){
+        if(idx==0) {
+            removeAtHead();
+            return;
+        }
+        if(idx<0 or idx>=length) {
+            cout << "Invalid index" << endl;
+        }
+        Node* temp = head;
+        for(int i=0; i<idx-1; i++){
+            temp = temp->next;
+        }
+        Node* ToBeDeleted = temp->next;
+        temp->next = temp->next->next;
+        if(idx==length-1) tail = temp;
+        delete ToBeDeleted;
+        length--;
+    }
 };
 
 int main(){
@@ -57,5 +101,11 @@ int main(){
     list.insertAtHead(20);
     list.insertAtHead(10);
     list.removeAtHead();
+    list.Display();
+    list.insert(69,3);
+    list.insert(69,5);
+    list.Display();
+    list.get(4);
+    list.remove(3);
     list.Display();
 }
