@@ -11,6 +11,21 @@ void print(stack<int> &st){
     }
     cout << endl;
 }
+
+void reversePrint(stack<int> &st){
+    stack<int> helper;
+    while(st.size() != 0){
+        helper.push(st.top());
+        st.pop();
+    }
+    while(helper.size()!=0){
+        cout << helper.top() << " ";
+        st.push(helper.top());
+        helper.pop();
+    }
+    cout << endl;
+}
+
 int main(){
     stack<int> st;
     st.push(31);       
@@ -21,4 +36,5 @@ int main(){
 
     print(st);
     print(st);
+    reversePrint(st);
 }
