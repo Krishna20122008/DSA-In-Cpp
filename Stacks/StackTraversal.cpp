@@ -3,10 +3,13 @@
 using namespace std;
 
 void print(stack<int> &st){
-    while(st.size() != 0){
-        cout << st.top() << " ";
-        st.pop();
+    stack<int> temp = st;
+
+    while(temp.size() != 0){
+        cout << temp.top() << " ";
+        temp.pop();
     }
+    cout << endl;
 }
 int main(){
     stack<int> st;
@@ -16,5 +19,6 @@ int main(){
     st.push(76);        
     st.push(50);          
 
+    print(st);
     print(st);
 }
