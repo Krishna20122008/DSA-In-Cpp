@@ -1,3 +1,10 @@
+#include<iostream>
+#include<stack>
+#include<string>
+#include<cmath>
+#include<vector>
+using namespace std;
+
 class Solution {
   public:
     int evaluatePostfix(vector<string>& arr) {
