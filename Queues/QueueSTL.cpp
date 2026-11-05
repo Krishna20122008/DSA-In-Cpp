@@ -34,6 +34,20 @@ void push(int ele, int idx, queue<int> &q){
         helper.pop();
     }
 }
+
+void pop(int idx, queue<int> &q){
+    for(int i=0; i<idx; i++){
+        int val = q.front();
+        q.pop();
+        q.push(val);
+    }
+    q.pop();
+    for(int i = 1; i<=q.size()-idx; i++){
+        int val = q.front();
+        q.pop();
+        q.push(val);
+    }
+}
 int main(){
     queue<int> q;
     q.push(10);
@@ -41,8 +55,12 @@ int main(){
     q.push(20);
     q.pop();
     q.push(40);
+    q.push(50);
+    q.push(79);
     printQueue(q);
 
     push(45, 2, q);
+    printQueue(q);
+    pop(5, q);
     printQueue(q);
 }
