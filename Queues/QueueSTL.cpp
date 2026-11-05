@@ -18,6 +18,10 @@ void printQueue(queue<int> &q){
 }
 
 void push(int ele, int idx, queue<int> &q){
+    if(idx>q.size()){
+        cout << "Invalid index!" << endl;
+        return;
+    }
     queue<int> helper;
     for(int i=0; i<idx; i++){
         helper.push(q.front()); 
@@ -36,12 +40,34 @@ void push(int ele, int idx, queue<int> &q){
 }
 
 void pop(int idx, queue<int> &q){
+    if(idx>q.size()){
+        cout << "Invalid index!" << endl;
+        return;
+    }
     for(int i=0; i<idx; i++){
         int val = q.front();
         q.pop();
         q.push(val);
     }
     q.pop();
+    for(int i = 1; i<=q.size()-idx; i++){
+        int val = q.front();
+        q.pop();
+        q.push(val);
+    }
+}
+
+void get(int idx, queue<int> &q){
+    if(idx>q.size()){
+        cout << "Invalid index!" << endl;
+        return;
+    }
+    for(int i=0; i<idx; i++){
+        int val = q.front();
+        q.pop();
+        q.push(val);
+    }
+    cout << q.front() << endl;
     for(int i = 1; i<=q.size()-idx; i++){
         int val = q.front();
         q.pop();
@@ -63,4 +89,6 @@ int main(){
     printQueue(q);
     pop(5, q);
     printQueue(q);
+    get(2, q);
+    get(7, q);
 }
