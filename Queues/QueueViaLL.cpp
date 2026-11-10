@@ -51,17 +51,12 @@ public:
         cout << head->val << endl;
     }
     void size(){
-        int len = 0;
-        Node* temp = head;
-        while(temp!=NULL){
-            len++;
-            temp = temp->next;
-        }
-        cout << "Length: " << len << endl;
+        cout << "Length: " << length << endl;
     }
     void empty(){
         head = tail = NULL;
         cout << "Queue is emptied!" << endl;
+        length = 0;
     }
 };
 int main(){
@@ -78,4 +73,5 @@ int main(){
     q.size();
     q.empty();
     q.display();
+    q.size();
 }
