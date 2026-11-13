@@ -24,5 +24,13 @@ int main(){
     c->left = NULL; c->right = f; // There's no need to write c->next = NULL as in the constructor, there is default value of NULL in left and right
 
     cout << e->val << endl;
+    cout << a->left->right->val << endl << endl;
+
+    //Printing the whole binary tree:
+    cout << a->val << endl;
+    cout << a->left->val << endl;
+    cout << a->right->val << endl;
+    cout << a->left->left->val << endl;
     cout << a->left->right->val << endl;
+    cout << a->right->right->val << endl;
 }
