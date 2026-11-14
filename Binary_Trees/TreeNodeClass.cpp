@@ -20,6 +20,14 @@ int size(Node* root){
     if(root==NULL) return 0;
     return 1 + size(root->left) + size(root->right);
 }
+int sumValues(Node* root){
+    if(root==NULL) return 0;
+    return root->val + sumValues(root->left) + sumValues(root->right);
+}
+int productValues(Node* root){
+    if(root==NULL) return 1;
+    return root->val * productValues(root->left) * productValues(root->right);
+}
 
 int main(){
     Node* a = new Node(1);
@@ -41,6 +49,10 @@ int main(){
 
     printTree(a);cout << endl;
     cout << size(a) << endl;
+    cout << endl;
+    cout << sumValues(a) << endl;
+    cout << endl;
+    cout << productValues(a) << endl;
 
     //Printing the whole binary tree:
     // cout << a->val << endl;
