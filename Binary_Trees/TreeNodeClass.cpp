@@ -41,6 +41,10 @@ int minVal(Node* root){
     int rightMin = minVal(root->right);
     return min(root->val, min(leftMin, rightMin));
 }
+int levels(Node* root){
+    if(root==NULL) return 0;
+    return 1 + max(levels(root->left), levels(root->right));
+}
 
 int main(){
     Node* a = new Node(1);
@@ -68,6 +72,7 @@ int main(){
     cout << productValues(a) << endl;
     cout << maxVal(a) << endl;
     cout << minVal(a) << endl;
+    cout << levels(a) << endl;
     
     //Printing the whole binary tree:
     // cout << a->val << endl;
