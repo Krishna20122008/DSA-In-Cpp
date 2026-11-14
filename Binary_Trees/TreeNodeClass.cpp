@@ -16,6 +16,10 @@ void printTree(Node* root){
     printTree(root->left);
     printTree(root->right);
 }
+int size(Node* root){
+    if(root==NULL) return 0;
+    return 1 + size(root->left) + size(root->right);
+}
 
 int main(){
     Node* a = new Node(1);
@@ -35,7 +39,8 @@ int main(){
     cout << e->val << endl;
     cout << a->left->right->val << endl << endl;
 
-    printTree(a);
+    printTree(a);cout << endl;
+    cout << size(a) << endl;
 
     //Printing the whole binary tree:
     // cout << a->val << endl;
