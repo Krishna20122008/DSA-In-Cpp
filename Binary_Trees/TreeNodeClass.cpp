@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 class Node{
 public:
@@ -28,6 +29,12 @@ int productValues(Node* root){
     if(root==NULL) return 1;
     return root->val * productValues(root->left) * productValues(root->right);
 }
+int maxVal(Node* root){
+    if(root==NULL) return INT_MIN;
+    int leftMax = maxVal(root->left);
+    int rightMax = maxVal(root->right);
+    return max(root->val, max(leftMax, rightMax));
+}
 
 int main(){
     Node* a = new Node(1);
@@ -53,7 +60,8 @@ int main(){
     cout << sumValues(a) << endl;
     cout << endl;
     cout << productValues(a) << endl;
-
+    cout << maxVal(a) << endl;
+    
     //Printing the whole binary tree:
     // cout << a->val << endl;
     // cout << a->left->val << endl;
